@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "GDAX IDR Extension",
+  "description": "This extension shows BTC price in IDR based on BTC-USD rate",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "author": "yezarela",
+  "content_scripts": [
+    {
+      "matches": ["https://www.gdax.com/trade/BTC-USD"],
+      "js": ["jquery.min.js", "inject-idr.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["activeTab", "https://ajax.googleapis.com/"]
+}
